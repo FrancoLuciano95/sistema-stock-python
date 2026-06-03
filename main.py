@@ -1,6 +1,19 @@
+import json
+
+def cargar_inventario():
+    try:
+        with open("inventario.json", "r") as archivo:
+            return json.load(archivo)
+    except FileNotFoundError:
+        return {}
+
+def guardar_inventario(inventario):
+    with open("inventario.json", "w") as archivo:
+        json.dump(inventario, archivo, indent=4)
+
 print("Sistema de Stock")
 
-inventario = {}
+inventario = cargar_inventario()
 
 while True:
     print("\n=== SISTEMA DE STOCK ===")
@@ -17,6 +30,7 @@ while True:
         producto = input("Nombre del producto: ").strip().lower()
         cantidad = int(input("Cantidad: "))
         inventario[producto] = cantidad
+        guardar_inventario(inventario)
         print("Producto agregado correctamente.")
 
     elif opcion == "2":
@@ -41,6 +55,7 @@ while True:
         if producto in inventario:
             nueva_cantidad = int(input("Nueva cantidad: "))
             inventario[producto] = nueva_cantidad
+            guardar_inventario(inventario)
             print("Stock actualizado.")
         else:
             print("Producto no encontrado.")
@@ -50,11 +65,13 @@ while True:
 
         if producto in inventario:
             del inventario[producto]
+            guardar_inventario(inventario)
             print("Producto eliminado.")
         else:
             print("Producto no encontrado.")
 
     elif opcion == "6":
+        guardar_inventario(inventario)
         print("Saliendo del sistema...")
         break
 
