@@ -1,23 +1,36 @@
 # Sistema de Stock en Python
 
-Proyecto desarrollado como práctica de programación utilizando Python.
+Aplicación de consola desarrollada en Python para gestionar un inventario de productos.
 
 ## Funcionalidades
 
 * Agregar productos
-* Consultar stock
-* Modificar cantidades
+* Mostrar inventario
+* Buscar productos
+* Modificar stock
 * Eliminar productos
-* Listar inventario completo
+* Búsqueda sin distinguir mayúsculas y minúsculas
+* Persistencia de datos mediante archivos JSON
 
 ## Tecnologías utilizadas
 
-* Python
+* Python 3
+* JSON
+* Git
+* GitHub
 
-## Objetivo
+## Cómo ejecutar
 
-Este proyecto fue desarrollado para aplicar conceptos de programación, estructuras de datos y resolución de problemas mediante la creación de un sistema simple de gestión de inventario.
+1. Clonar el repositorio
+2. Abrir una terminal en la carpeta del proyecto
+3. Ejecutar:
+
+```bash
+python main.py
+```
 
 ## Autor
 
 Franco Maercovich
+
+Proyecto desarrollado como práctica para fortalecer conocimientos de programación, manejo de archivos y control de versiones.
