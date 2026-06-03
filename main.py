@@ -14,7 +14,7 @@ while True:
     opcion = input("Seleccione una opción: ")
 
     if opcion == "1":
-        producto = input("Nombre del producto: ")
+        producto = input("Nombre del producto: ").strip().lower()
         cantidad = int(input("Cantidad: "))
         inventario[producto] = cantidad
         print("Producto agregado correctamente.")
@@ -28,7 +28,7 @@ while True:
                 print(f"{producto}: {cantidad}")
 
     elif opcion == "3":
-        producto = input("Ingrese el producto a buscar: ")
+        producto = input("Ingrese el producto a buscar: ").strip().lower()
 
         if producto in inventario:
             print(f"Stock disponible: {inventario[producto]}")
@@ -36,7 +36,7 @@ while True:
             print("Producto no encontrado.")
 
     elif opcion == "4":
-        producto = input("Producto a modificar: ")
+        producto = input("Producto a modificar: ").strip().lower()
 
         if producto in inventario:
             nueva_cantidad = int(input("Nueva cantidad: "))
@@ -46,7 +46,7 @@ while True:
             print("Producto no encontrado.")
 
     elif opcion == "5":
-        producto = input("Producto a eliminar: ")
+        producto = input("Producto a eliminar: ").strip().lower()
 
         if producto in inventario:
             del inventario[producto]
