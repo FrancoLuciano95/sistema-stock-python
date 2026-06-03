@@ -1,0 +1,2 @@
+echo "=== Memoria ==="
+free -h
